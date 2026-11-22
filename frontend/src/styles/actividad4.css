@@ -1,0 +1,18 @@
+.a4-contenedor { max-width: 940px; margin: 28px auto; padding: 24px; font-family: system-ui, sans-serif; color: #242424; }
+.a4-cabecera { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 18px; }
+.a4-cabecera h1 { font-size: 1.65rem; margin: 0 0 9px; line-height: 1.25; }
+.a4-cabecera p { margin: 6px 0; }
+.a4-etiqueta { color: #754b24; font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+.a4-ficha { padding: 22px; background: #fff; border: 1px solid #dedede; border-radius: 12px; margin-bottom: 17px; box-shadow: 0 2px 8px #0000000a; }
+.a4-ficha h2 { font-size: 1.2rem; margin: 0 0 9px; }
+.a4-formulario { display: grid; gap: 8px; max-width: 480px; margin-top: 18px; }
+.a4-formulario label { font-weight: 650; margin-top: 7px; }
+.a4-formulario input { padding: 11px 12px; border: 1px solid #a7a7a7; border-radius: 7px; background: white; color: #242424; }
+.a4-formulario input:focus-visible { outline: 3px solid #bf8935; outline-offset: 2px; }
+.a4-acciones { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.a4-acciones button { padding: 10px 15px; background: #283f35; color: white; font-weight: 650; border-radius: 7px; border: 0; cursor: pointer; }
+.a4-acciones button:disabled { opacity: .6; cursor: default; }
+.a4-acciones .a4-secundario { background: #eee; color: #232323; }
+.a4-exito { padding: 12px; background: #e5f5eb; color: #16582b; border-radius: 7px; }
+.a4-error { padding: 12px; background: #ffefed; color: #8b2323; border-radius: 7px; }
+@media (max-width: 620px) { .a4-contenedor { padding: 14px; } .a4-cabecera { flex-direction: column; } }

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:actividad4": "node --test src/actividad4/*.test.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

@@ -36,6 +36,7 @@ import Usuarios from "./pages/Usuarios.jsx";
 import ZonasDespacho from "./pages/ZonasDespacho.jsx";
 import Informes from "./pages/Informes.jsx";
 import AccesoDenegado from "./pages/AccesoDenegado.jsx";
+import Actividad4 from "./pages/Actividad4.jsx";
 
 
 import UserFooter from "./components/UserFooter.jsx";
@@ -72,6 +73,9 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
 
         <Route element={<PrivateRoute />}>
+          {/* Ruta académica, disponible solo para usuarios autenticados. */}
+          <Route path="/actividad4" element={<Actividad4 />} />
+
           <Route
             path="/"
             element={

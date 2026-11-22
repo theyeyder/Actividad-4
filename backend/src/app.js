@@ -52,6 +52,10 @@ import { proteger } from "./middlewares/auth.middleware.js";
 
 import { controlarAccesoModulo } from "./middlewares/controlAcceso.middleware.js";
 
+// Complemento académico independiente (Actividad 4)
+import actividad4Routes from "./routes/actividad4.routes.js";
+import { configurarSwagger } from "./actividad4/swagger.js";
+
 
 const app = express();
 
@@ -98,6 +102,10 @@ app.get(
     })
 );
 
+
+// Documentación Swagger y API académica; sin efectos sobre módulos existentes.
+configurarSwagger(app);
+app.use("/api/actividad4", actividad4Routes);
 
 /* =========================================
    RUTAS API
