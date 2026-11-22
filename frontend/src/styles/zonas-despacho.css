@@ -1,0 +1,711 @@
+/* =========================================================
+   MODULO PRINCIPAL
+========================================================= */
+
+.zonas-module {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgb(241, 255, 241),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 16%,
+      rgba(69, 123, 157, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #a8f7e3 0%,
+      #b1cdb7 55%,
+      #99a89b 100%
+    );
+}
+
+
+/* =========================================================
+   CABECERA
+========================================================= */
+
+.zonas-title-bar {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 8000;
+
+  width: 100%;
+
+  min-height: 72px;
+
+  padding: 5px 70px 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e 0%,
+      #159a75 52%,
+      #20afb2 100%
+    );
+
+  box-shadow:
+    0 4px 12px
+    rgba(15, 23, 42, 0.10);
+}
+
+
+.zonas-title-left {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.zonas-title-info h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PANEL PRINCIPAL ZONAS
+========================================================= */
+
+.zonas-work-panel {
+  width: min(
+    1050px,
+    calc(100% - 40px)
+  );
+
+  margin: 28px auto 80px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid #6d6868ad;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 26px
+    rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   CAMPOS - GRID ACTUALIZADO PARA 4 COLUMNAS
+========================================================= */
+
+.zonas-work-fields {
+  display: grid;
+
+  grid-template-columns:
+    140px
+    1fr
+    2fr
+    160px;
+
+  gap: 16px;
+
+  align-items: end;
+}
+
+
+.zonas-work-fields label {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #344054;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.zonas-work-fields input,
+.zonas-work-fields select {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 11px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid #3f7c4b97;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #353b47;
+
+  font-size: 13px;
+
+  outline: none;
+}
+
+
+.zonas-work-fields input:focus,
+.zonas-work-fields select:focus {
+  border-color: #20afb2;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(32, 175, 178, 0.10);
+}
+
+
+.zonas-work-fields input[readonly] {
+  background: #f5f7fa;
+  color: #667085;
+  cursor: default;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.zonas-work-actions {
+  margin-top: 16px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid #e7eeea;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  flex-wrap: nowrap;
+}
+
+
+.zonas-work-btn {
+  position: relative;
+
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 5px;
+
+  border:
+    1px solid #d8e0dc;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px
+    rgba(25, 81, 209, 0.08);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.zonas-work-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 15px
+    rgb(36, 126, 72);
+}
+
+
+.zonas-work-btn:disabled {
+  opacity: 0.42;
+
+  cursor: not-allowed;
+}
+
+
+.zonas-work-btn img {
+  width: 25px;
+  height: 25px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOOLTIP - BOTONES DEL PANEL
+========================================================= */
+
+.zonas-work-btn::after {
+  content: attr(data-tooltip);
+
+  position: absolute;
+
+  top: calc(100% + 8px);
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateY(-4px);
+
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+}
+
+.zonas-work-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* =========================================================
+   MODAL BUSCAR ZONAS
+========================================================= */
+
+.zonas-search-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100000;
+
+  background:
+    rgba(15, 23, 42, 0.18);
+
+  pointer-events: none;
+}
+
+.zonas-search-modal {
+  position: fixed;
+
+  width: min(760px, 94vw);
+  max-height: 78vh;
+
+  overflow: hidden;
+
+  border: 1px solid #d8e5df;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 24px 65px
+    rgba(15, 23, 42, 0.28);
+
+  pointer-events: auto;
+}
+
+
+/* CABECERA DEL MODAL */
+
+.zonas-search-modal-header {
+  min-height: 50px;
+
+  padding: 8px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087f69,
+      #20afb2
+    );
+
+  color: #ffffff;
+
+  cursor: move;
+  user-select: none;
+}
+
+.zonas-search-modal-header h3 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.zonas-search-modal-close {
+  width: 32px;
+  height: 32px;
+
+  padding: 5px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.zonas-search-modal-close img {
+  width: 21px;
+  height: 21px;
+
+  object-fit: contain;
+}
+
+
+/* FILTROS DEL BUSCADOR */
+
+.zonas-search-modal-filters {
+  padding: 12px 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    140px 1fr;
+
+  gap: 10px;
+
+  border-bottom:
+    1px solid #e4ebe8;
+
+  background: #f8fbfa;
+}
+
+.zonas-search-modal-filters select {
+  height: 38px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid #d0d9d5;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.zonas-search-modal-input {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  border:
+    1px solid #d0d9d5;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+.zonas-search-modal-input:focus-within {
+  border-color: #20afb2;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(32, 175, 178, 0.12);
+}
+
+.zonas-search-modal-input img {
+  width: 21px;
+  height: 21px;
+
+  margin-left: 10px;
+
+  object-fit: contain;
+}
+
+.zonas-search-modal-input input {
+  width: 100%;
+  height: 36px;
+
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* TABLA EMERGENTE */
+
+.zonas-search-modal-table-wrap {
+  max-height: 390px;
+
+  overflow: auto;
+
+  background: #ffffff;
+}
+
+.zonas-search-modal-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+.zonas-search-modal-table th:nth-child(1),
+.zonas-search-modal-table td:nth-child(1) {
+  width: 28%;
+}
+
+.zonas-search-modal-table th:nth-child(2),
+.zonas-search-modal-table td:nth-child(2) {
+  width: 52%;
+}
+
+.zonas-search-modal-table th:nth-child(3),
+.zonas-search-modal-table td:nth-child(3) {
+  width: 20%;
+}
+
+.zonas-search-modal-table thead {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 5;
+}
+
+.zonas-search-modal-table th {
+  padding: 10px 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0e7a71,
+      #0e7a71
+    );
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zonas-search-modal-table td {
+  padding: 10px 12px;
+
+  border-bottom:
+    1px solid #e7eeea;
+
+  color: #25333d;
+
+  font-size: 12px;
+
+  text-align: center;
+  vertical-align: middle;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zonas-search-modal-table td:nth-child(2) {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.zonas-search-modal-table tbody tr {
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.zonas-search-modal-table tbody tr:nth-child(even) {
+  background: #f5faf8;
+}
+
+.zonas-search-modal-table tbody tr:hover {
+  background: #ddf5ea;
+
+  box-shadow:
+    inset 4px 0 0 #12b76a;
+}
+
+
+/* ESTADO EN TABLA EMERGENTE */
+
+.zonas-search-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 72px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.zonas-search-status.active {
+  color: #067647;
+
+  background: #ecfdf3;
+
+  border: 1px solid #abefc6;
+}
+
+.zonas-search-status.inactive {
+  color: #b42318;
+
+  background: #fef3f2;
+
+  border: 1px solid #fecdca;
+}
+
+
+/* ESTADO VACÍO EN TABLA EMERGENTE */
+
+.zonas-search-empty {
+  padding: 28px !important;
+
+  color: #98a2b3 !important;
+
+  text-align: center !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .zonas-work-panel {
+    width: calc(100% - 20px);
+    padding: 14px;
+    margin: 18px auto 60px;
+  }
+
+  .zonas-work-fields {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .zonas-work-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .zonas-work-btn {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .zonas-work-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .zonas-title-bar {
+    padding: 10px 14px;
+    min-height: 60px;
+  }
+
+  .zonas-title-info h2 {
+    font-size: 20px;
+  }
+
+  .zonas-search-modal {
+    width: 96vw;
+    max-height: 85vh;
+  }
+
+  .zonas-search-modal-table-wrap {
+    max-height: 280px;
+  }
+
+  .zonas-search-modal-filters {
+    grid-template-columns: 1fr;
+  }
+}

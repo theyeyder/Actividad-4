@@ -1,0 +1,1886 @@
+/* =========================================================
+   CABECERA CLIENTES FIJA
+========================================================= */
+
+.clientes-title-bar {
+  position: sticky;
+  top: 0;
+  z-index: 8000;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 8px 40px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087f69,
+      #20afb2
+    );
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================
+   CLIENTES - CONTENEDOR GENERAL
+========================================= */
+
+
+.clientes-module {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgb(241, 255, 241),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 16%,
+      rgba(69, 123, 157, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #a8f7e3 0%,
+      #b1cdb7 55%,
+      #99a89b 100%
+    );
+}
+
+
+/* =========================================
+   MÓDULO PRINCIPAL (SpatialCard)
+========================================= */
+
+.clientes-module {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   ALERTAS
+========================================= */
+
+.clientes-alert {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  z-index: 99999;
+
+  min-width: 280px;
+  max-width: 420px;
+
+  padding: 13px 16px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow:
+    0 16px 36px rgba(15, 23, 42, 0.18);
+
+  animation: clientesToastIn 0.24s ease;
+}
+
+.clientes-alert--success {
+  color: #067647;
+  background: #ecfdf3;
+  border: 1px solid #abefc6;
+}
+
+.clientes-alert--error {
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+}
+
+.clientes-alert--info {
+  color: #175cd3;
+  background: #eff8ff;
+  border: 1px solid #b2ddff;
+}
+
+@keyframes clientesToastIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   TARJETA PRINCIPAL
+========================================= */
+
+.clientes-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid #dce7e2;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.clientes-title-bar {
+  min-height: 72px;
+
+  padding: 12px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e 0%,
+      #159a75 52%,
+      #20afb2 100%
+    );
+
+  color: #fff6f6;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+.clientes-title-info {
+  display: flex;
+  align-items: center;
+
+  /* espacio reservado para el botón Módulos */
+  margin-left: 72px;
+}
+
+.clientes-title-info h2 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.clientes-title-icon {
+  width: 44px;
+  height: 44px;
+
+  flex: 0 0 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:  #0e7a71,(56, 198, 108);
+
+  box-shadow:
+    inset 0 0 0 1px  #0e7a71,(214, 203, 203);
+}
+
+.clientes-title-icon img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+  display: block;
+}
+
+.clientes-title-info h2 {
+  margin: 0 0 2px;
+
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   BOTONES SUPERIORES
+========================================= */
+
+.clientes-title-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.clientes-icon-btn,
+.clientes-title-actions button {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.14);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.clientes-icon-btn:hover,
+.clientes-title-actions button:hover {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 22px rgba(15, 23, 42, 0.18);
+}
+
+.clientes-icon-btn:disabled,
+.clientes-title-actions button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+  transform: none;
+}
+
+.clientes-icon-btn img,
+.clientes-title-actions button img {
+  width: 27px;
+  height: 27px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   TOOLTIP DE ACCIONES - DEBAJO
+========================================= */
+
+.clientes-icon-btn {
+  position: relative;
+}
+
+/* Texto */
+.clientes-icon-btn::after {
+  content: attr(data-tooltip);
+
+  position: absolute;
+
+  /* DEBAJO DEL BOTÓN */
+  top: calc(100% + 8px);
+  bottom: auto;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateY(-4px);
+
+  padding: 6px 10px;
+
+  background: #172033;
+  color: #ffffff;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* Flechita */
+.clientes-icon-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: calc(100% + 3px);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #172033;
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 99999;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease;
+}
+
+/* MOSTRAR */
+.clientes-icon-btn:hover::after,
+.clientes-icon-btn:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.clientes-icon-btn:hover::after {
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.clientes-form-grid {
+  padding: 20px 18px 22px;
+
+  display: grid;
+  grid-template-columns:
+    100px
+    repeat(3, minmax(180px, 1fr));
+
+  gap: 14px 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fbfdfc
+    );
+}
+
+.clientes-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.clientes-field label {
+  color: #1f2937;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.clientes-field input,
+.clientes-field select {
+  width: 100%;
+  height: 38px;
+
+  padding: 6px 10px;
+
+  border: 1px solid #cfd9d5;
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.clientes-field input:hover,
+.clientes-field select:hover {
+  border-color: #77c9b0;
+}
+
+.clientes-field input:focus,
+.clientes-field select:focus {
+  border-color: #20afb2;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(32, 175, 178, 0.12);
+}
+
+.clientes-field input:disabled,
+.clientes-field select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background: #f2f4f7;
+}
+
+/* Tipo CC / NIT pequeño */
+.clientes-field-tipo {
+  max-width: 100px;
+}
+
+.clientes-field-tipo select {
+  width: 100%;
+  text-align: center;
+
+  font-weight: 900;
+}
+
+/* Estado un poco más corto */
+.clientes-field-estado {
+  max-width: 180px;
+}
+
+
+/* =========================================================
+   MODAL BUSCAR CLIENTES
+========================================================= */
+
+.clientes-search-modal-close img {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+.clientes-search-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.20);
+
+  backdrop-filter: blur(3px);
+}
+
+
+.clientes-search-modal {
+  width: min(980px, 95vw);
+  max-height: 82vh;
+
+  overflow: hidden;
+
+  border: 1px solid #d8e5df;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 24px 65px rgba(15, 23, 42, 0.28);
+}
+
+
+/* =========================================================
+   CABECERA
+========================================================= */
+
+.clientes-search-modal-header {
+  min-height: 52px;
+
+  padding: 9px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087f69,
+      #20afb2
+    );
+
+  color: #ffffff;
+}
+
+
+.clientes-search-modal-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   BOTÓN CERRAR
+========================================================= */
+
+.clientes-search-modal-close {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #344054;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.clientes-search-modal-close:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 12px rgba(15, 23, 42, 0.16);
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.clientes-search-modal-filters {
+  padding: 13px 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    155px 1fr;
+
+  gap: 10px;
+
+  border-bottom: 1px solid #e4ebe8;
+
+  background: #f8fbfa;
+}
+
+
+.clientes-search-modal-filters select {
+  height: 40px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d0d9d5;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  color: #172033;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CAJA DE BÚSQUEDA
+========================================================= */
+
+.clientes-search-modal-input {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d0d9d5;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+
+.clientes-search-modal-input:focus-within {
+  border-color: #20afb2;
+
+  box-shadow:
+    0 0 0 3px rgba(32, 175, 178, 0.12);
+}
+
+
+.clientes-search-modal-input img {
+  width: 22px;
+  height: 22px;
+
+  margin-left: 10px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+
+.clientes-search-modal-input input {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.clientes-search-modal-table-wrap {
+  max-height: 430px;
+
+  overflow: auto;
+
+  background: #ffffff;
+}
+
+
+.clientes-search-modal-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+
+/* CABECERA FIJA */
+
+.clientes-search-modal-table thead {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 5;
+}
+
+
+.clientes-search-modal-table th {
+  padding: 10px 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0e7a71,
+      #0e7a71
+    );
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+
+  white-space: nowrap;
+}
+
+
+/* CELDAS */
+
+.clientes-search-modal-table td {
+  padding: 10px 12px;
+
+  border-bottom: 1px solid #e7eeea;
+
+  color: #25333d;
+
+  font-size: 12px;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+/* FILAS */
+
+.clientes-search-modal-table tbody tr {
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+.clientes-search-modal-table tbody tr:nth-child(even) {
+  background: #f5faf8;
+}
+
+
+.clientes-search-modal-table tbody tr:hover {
+  background: #ddf5ea;
+
+  box-shadow:
+    inset 4px 0 0 #12b76a;
+}
+
+
+/* =========================================================
+   DOCUMENTO
+========================================================= */
+
+.clientes-search-modal-table td:first-child strong {
+  color: #087443;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   ESTADO
+========================================================= */
+
+.clientes-search-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 72px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+.clientes-search-status.active {
+  color: #067647;
+
+  background: #ecfdf3;
+
+  border: 1px solid #abefc6;
+}
+
+
+.clientes-search-status.inactive {
+  color: #b42318;
+
+  background: #fef3f2;
+
+  border: 1px solid #fecdca;
+}
+
+
+/* =========================================================
+   SIN RESULTADOS
+========================================================= */
+
+.clientes-search-empty {
+  padding: 30px !important;
+
+  color: #98a2b3 !important;
+
+  text-align: center !important;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .clientes-search-modal {
+    width: 96vw;
+  }
+
+  .clientes-search-modal-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .clientes-search-modal-table {
+    min-width: 760px;
+  }
+
+}
+
+/* =========================================
+   BOTONES TABLA
+========================================= */
+.clientes-search-modal-close img {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+.clientes-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  flex-wrap: nowrap;
+}
+
+.clientes-action-btn {
+  position: relative;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 5px;
+
+  border: 1px solid #d8e0dc;
+  border-radius: 8px;
+
+  background: #e6dfdf;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #475467;
+
+  font-size: 16px;
+  font-weight: 900;
+
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.clientes-action-btn img {
+  width: 20px;
+  height: 20px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+.clientes-action-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.clientes-action-edit:hover {
+  background: #eff8ff;
+  border-color: #b2ddff;
+}
+
+.clientes-action-disable:hover {
+  background: #fef3f2;
+  border-color: #fecdca;
+}
+
+.clientes-action-enable:hover {
+  background: #ecfdf3;
+  border-color: #abefc6;
+}
+
+
+/* =========================================
+   TOOLTIP BOTONES TABLA
+========================================= */
+
+.clientes-action-btn::after {
+  content: attr(data-tooltip);
+
+  position: absolute;
+
+  bottom: calc(100% + 8px);
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateY(5px);
+
+  padding: 5px 9px;
+
+  border-radius: 7px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+}
+
+.clientes-action-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* =========================================
+   ESTADO VACÍO / CARGANDO
+========================================= */
+
+.clientes-table-message {
+  padding: 36px !important;
+
+  text-align: center;
+
+  color: #667085 !important;
+
+  font-weight: 700;
+}
+
+.clientes-empty {
+  padding: 42px !important;
+
+  text-align: center;
+}
+
+.clientes-empty div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  align-items: center;
+}
+
+.clientes-empty strong {
+  color: #344054;
+
+  font-size: 14px;
+}
+
+.clientes-empty span {
+  color: #98a2b3;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.clientes-table-wrap::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.clientes-table-wrap::-webkit-scrollbar-track {
+  background: #f2f4f7;
+}
+
+.clientes-table-wrap::-webkit-scrollbar-thumb {
+  background: #c4cec9;
+
+  border-radius: 10px;
+}
+
+.clientes-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: #98aaa1;
+}
+
+
+/* =========================================
+   PAGINACIÓN CLIENTES
+========================================= */
+
+.clientes-pagination {
+  min-height: 58px;
+
+  padding: 10px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  border-top: 1px solid #e4ebe8;
+
+  background: #ffffff;
+}
+
+.clientes-pagination-info {
+  color: #667085;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.clientes-pagination-info strong {
+  color: #087443;
+  font-weight: 900;
+}
+
+.clientes-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clientes-pagination-controls span {
+  color: #667085;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.clientes-pagination-controls span strong {
+  color: #172033;
+  font-weight: 900;
+}
+
+.clientes-pagination-controls button {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d8e0dc;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #087443;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.clientes-pagination-controls button:hover:not(:disabled) {
+  background: #eefbf6;
+  border-color: #77c9b0;
+
+  transform: translateY(-1px);
+}
+
+.clientes-pagination-controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   ORDENAMIENTO DE TABLA
+========================================= */
+
+.clientes-sort-btn {
+  width: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.clientes-sort-btn:hover {
+  color: #eafff8;
+}
+
+.clientes-sort-btn span {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .clientes-form-grid {
+    grid-template-columns:
+      100px
+      repeat(2, minmax(180px, 1fr));
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .clientes-page {
+    padding: 70px 16px 58px;
+  }
+
+  .clientes-title-bar {
+    align-items: flex-start;
+  }
+
+  .clientes-form-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .clientes-field-tipo {
+    max-width: none;
+  }
+
+  .clientes-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clientes-search-box {
+    max-width: none;
+  }
+
+  .clientes-counter {
+    justify-content: flex-end;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .clientes-page {
+    padding: 70px 12px 58px;
+  }
+
+  .clientes-title-bar {
+    flex-direction: column;
+  }
+
+  .clientes-title-actions {
+    align-self: flex-end;
+  }
+
+  .clientes-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clientes-field-tipo,
+  .clientes-field-estado {
+    max-width: none;
+  }
+
+}
+
+/* =========================================================
+   FORMULARIO CLIENTES COMPACTO
+========================================================= */
+
+.clientes-main-form {
+  width: min(1050px, calc(100% - 40px));
+
+  margin: 22px auto 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px 18px;
+
+  align-items: end;
+}
+
+
+/* CAMPOS */
+
+.clientes-main-form label {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* INPUT / SELECT */
+
+.clientes-main-form input,
+.clientes-main-form select {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 11px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d0d9d5;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-size: 12px;
+
+  outline: none;
+}
+
+
+/* FOCUS */
+
+.clientes-main-form input:focus,
+.clientes-main-form select:focus {
+  border-color: #20afb2;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(32, 175, 178, 0.10);
+}
+@media (max-width: 900px) {
+
+  .clientes-main-form {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .clientes-main-form {
+    width: calc(100% - 24px);
+
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.clientes-field-codigo {
+  max-width: 150px;
+}
+
+.clientes-field-codigo input {
+  background: #eef5f2;
+  color: #0a1510;
+
+  font-weight: 900;
+
+  letter-spacing: 0.4px;
+
+  cursor: default;
+}
+/* =========================================================
+   MEJORA FORMULARIO CLIENTES - SECCIONES ORGANIZADAS
+========================================================= */
+
+.clientes-main-form {
+  width: min(1120px, calc(100% - 40px));
+  margin: 24px auto 72px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  align-items: stretch;
+}
+
+.clientes-form-section {
+  width: 100%;
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dce7e2;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfdfc 100%
+    );
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.clientes-form-section-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #e4ebe8;
+}
+
+.clientes-form-section-header h3 {
+  margin: 0;
+
+  color: #0f766e;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.clientes-form-section-header span {
+  color: #667085;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.clientes-form-section-grid {
+  display: grid;
+  gap: 14px 16px;
+  align-items: end;
+}
+
+/* IDENTIFICACIÓN
+   Código | Tipo documento | Documento | Nombre | Razón social
+*/
+.clientes-form-section-grid--identificacion {
+  grid-template-columns:
+    120px
+    150px
+    minmax(180px, 0.9fr)
+    minmax(240px, 1.4fr)
+    minmax(220px, 1.2fr);
+}
+
+/* CONTACTO Y UBICACIÓN
+   Teléfono | Dirección | Ciudad | Zona
+*/
+.clientes-form-section-grid--contacto {
+  grid-template-columns:
+    minmax(150px, 0.8fr)
+    minmax(260px, 1.45fr)
+    minmax(180px, 0.95fr)
+    minmax(220px, 1.15fr);
+}
+
+/* CONFIGURACIÓN */
+.clientes-form-section-grid--configuracion {
+  grid-template-columns:
+    minmax(220px, 320px)
+    minmax(160px, 220px);
+
+  justify-content: start;
+}
+
+.clientes-form-section .clientes-field {
+  min-width: 0;
+  max-width: none;
+}
+
+.clientes-form-section .clientes-field label {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #344054;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.clientes-form-section .clientes-field input,
+.clientes-form-section .clientes-field select {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 11px;
+  box-sizing: border-box;
+
+  border: 1px solid #cfd9d5;
+  border-radius: 9px;
+  outline: none;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.clientes-form-section .clientes-field input:hover,
+.clientes-form-section .clientes-field select:hover {
+  border-color: #77c9b0;
+}
+
+.clientes-form-section .clientes-field input:focus,
+.clientes-form-section .clientes-field select:focus {
+  border-color: #20afb2;
+
+  box-shadow:
+    0 0 0 3px rgba(32, 175, 178, 0.11);
+}
+
+.clientes-form-section .clientes-field input:disabled,
+.clientes-form-section .clientes-field select:disabled {
+  background: #f2f4f7;
+  color: #667085;
+  cursor: not-allowed;
+}
+
+.clientes-form-section .clientes-field-codigo {
+  max-width: none;
+}
+
+.clientes-form-section .clientes-field-codigo input {
+  background: #eef7f4;
+  color: #0f766e;
+
+  font-weight: 900;
+  letter-spacing: 0.35px;
+}
+
+.clientes-form-section .clientes-field-tipo {
+  max-width: none;
+}
+
+.clientes-form-section .clientes-field-tipo select {
+  text-align: center;
+  font-weight: 900;
+}
+
+.clientes-form-section .clientes-field-estado {
+  max-width: none;
+}
+
+/* Pequeño acento visual por sección */
+.clientes-form-section--identificacion {
+  border-left: 4px solid #0f766e;
+}
+
+.clientes-form-section--contacto {
+  border-left: 4px solid #20afb2;
+}
+
+.clientes-form-section--configuracion {
+  border-left: 4px solid #159a75;
+}
+
+/* =========================================================
+   RESPONSIVE DEL NUEVO FORMULARIO
+========================================================= */
+
+@media (max-width: 1180px) {
+
+  .clientes-form-section-grid--identificacion,
+  .clientes-form-section-grid--contacto {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .clientes-field-nombre,
+  .clientes-field-razon-social,
+  .clientes-field-direccion,
+  .clientes-field-zona {
+    grid-column: span 2;
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .clientes-main-form {
+    width: calc(100% - 28px);
+    margin-top: 18px;
+  }
+
+  .clientes-form-section {
+    padding: 15px;
+  }
+
+  .clientes-form-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .clientes-form-section-header span {
+    text-align: left;
+  }
+
+  .clientes-form-section-grid--identificacion,
+  .clientes-form-section-grid--contacto,
+  .clientes-form-section-grid--configuracion {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .clientes-field-nombre,
+  .clientes-field-razon-social,
+  .clientes-field-direccion,
+  .clientes-field-zona {
+    grid-column: span 1;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .clientes-main-form {
+    width: calc(100% - 20px);
+    gap: 14px;
+  }
+
+  .clientes-form-section {
+    padding: 14px 12px;
+    border-radius: 13px;
+  }
+
+  .clientes-form-section-grid--identificacion,
+  .clientes-form-section-grid--contacto,
+  .clientes-form-section-grid--configuracion {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   CLIENTES - CABECERA RESPONSIVE PARA ZOOM
+   Evita que título y botones de acción se monten.
+   Bloque final para prevalecer sobre reglas anteriores.
+========================================================= */
+
+.clientes-title-bar {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 1fr)
+    max-content;
+
+  align-items: center;
+
+  column-gap: 18px;
+  row-gap: 8px;
+
+  min-height: 72px;
+
+  padding:
+    10px
+    18px
+    10px
+    70px;
+
+  overflow: visible;
+}
+
+.clientes-title-info {
+  min-width: 0;
+
+  margin-left: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.clientes-title-info h2 {
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clientes-title-actions {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  flex-wrap: nowrap;
+
+  overflow: visible;
+}
+
+.clientes-icon-btn,
+.clientes-title-actions button {
+  flex: 0 0 42px;
+}
+
+
+/* =========================================================
+   ZOOM / PANTALLA INTERMEDIA
+   Compactar antes de que empiece la superposición
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .clientes-title-bar {
+    grid-template-columns:
+      minmax(125px, 1fr)
+      max-content;
+
+    column-gap: 12px;
+
+    padding-right: 14px;
+  }
+
+  .clientes-title-actions {
+    gap: 5px;
+  }
+
+  .clientes-icon-btn,
+  .clientes-title-actions button {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+
+    padding: 5px;
+
+    border-radius: 9px;
+  }
+
+  .clientes-icon-btn img,
+  .clientes-title-actions button img {
+    width: 24px;
+    height: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   CUANDO YA NO CABE EN UNA SOLA FILA
+   Las acciones bajan completas y conservan su espacio.
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .clientes-title-bar {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding:
+      10px
+      12px
+      10px
+      70px;
+
+    row-gap: 8px;
+  }
+
+  .clientes-title-info {
+    width: 100%;
+  }
+
+  .clientes-title-info h2 {
+    font-size: 22px;
+  }
+
+  .clientes-title-actions {
+    width: 100%;
+
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    align-self: auto;
+  }
+
+}
+
+
+/* =========================================================
+   ZOOM ALTO / PANTALLA PEQUEÑA
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .clientes-title-bar {
+    padding:
+      9px
+      10px
+      9px
+      62px;
+
+    row-gap: 7px;
+  }
+
+  .clientes-title-info h2 {
+    font-size: 20px;
+  }
+
+  .clientes-title-actions {
+    justify-content: flex-start;
+  }
+
+  .clientes-icon-btn,
+  .clientes-title-actions button {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+  }
+
+  .clientes-icon-btn img,
+  .clientes-title-actions button img {
+    width: 22px;
+    height: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   ZOOM MUY ALTO
+   Mantiene todos los botones visibles sin superposición.
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .clientes-title-bar {
+    padding-left: 60px;
+  }
+
+  .clientes-title-actions {
+    display: grid;
+
+    grid-template-columns:
+      repeat(4, 36px);
+
+    justify-content: start;
+
+    width: 100%;
+
+    gap: 5px;
+  }
+
+}

@@ -1,0 +1,2067 @@
+/* =========================================================
+   USUARIOS - CABECERA FIJA
+========================================================= */
+
+.usuarios-module {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 0 0 70px 0;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgb(241, 255, 241),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 16%,
+      rgba(69, 123, 157, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #a8f7e3 0%,
+      #b1cdb7 55%,
+      #99a89b 100%
+    );
+}
+
+
+/* =========================================================
+   CABECERA
+========================================================= */
+
+.usuarios-title-bar {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 8000;
+
+  width: 100%;
+  min-height: 72px;
+
+  padding: 5px 70px 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e 0%,
+      #159a75 52%,
+      #20afb2 100%
+    );
+
+  box-shadow:
+    0 4px 12px
+    rgba(15, 23, 42, 0.10);
+
+  border-radius: 0;
+
+  overflow: visible;
+}
+
+
+.usuarios-title-left {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.usuarios-title-info h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   FOOTER FIJO
+========================================================= */
+
+.app-footer {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 7000;
+
+  /* Ajusta estos estilos según tu footer actual */
+  background: #ffffff;
+  padding: 12px 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #e7eeea;
+}
+
+
+/* =========================================================
+   PANEL PRINCIPAL USUARIOS
+========================================================= */
+
+.usuarios-work-panel {
+  width: min(
+    760px,
+    calc(100% - 40px)
+  );
+
+  margin: 28px auto 80px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid #6d6868ad;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 26px
+    rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   CABECERA DE ACCIONES
+========================================================= */
+
+.usuarios-actions-header {
+  width: 100%;
+  min-height: 58px;
+
+  padding: 8px 14px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  border: 1px solid #d8e5df;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0f766e 0%,
+      #0f766e
+    );
+
+  box-shadow:
+    0 4px 12px
+    rgba(15, 23, 42, 0.06);
+}
+
+
+/* TÍTULO ACCIONES */
+
+.usuarios-actions-title {
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* CONTENEDOR DE BOTONES */
+
+.usuarios-work-actions {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   BOTONES DE ACCIÓN
+========================================================= */
+
+.usuarios-work-btn {
+  position: relative;
+
+  flex:
+    0
+    0
+    40px;
+
+  width: 40px;
+  height: 40px;
+
+  min-width: 40px;
+  min-height: 40px;
+
+  padding: 5px;
+
+  border:
+    1px solid #d8e0dc;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px
+    rgba(25, 81, 209, 0.08);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+}
+
+
+.usuarios-work-btn:hover:not(:disabled) {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 7px 15px
+    rgb(36, 126, 72);
+}
+
+
+.usuarios-work-btn:disabled {
+  opacity: 0.42;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+.usuarios-work-btn img {
+  width: 25px;
+  height: 25px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.usuarios-work-btn::after {
+  content:
+    attr(data-tooltip);
+
+  position: absolute;
+
+  top:
+    calc(100% + 8px);
+
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateY(-4px);
+
+  padding:
+    6px
+    10px;
+
+  border-radius: 7px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.usuarios-work-btn:hover::after {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* =========================================================
+   FORMULARIO VERTICAL
+========================================================= */
+
+.usuarios-form-grid {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 22px auto 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.usuarios-field {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.usuarios-field label {
+  color: #344054;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.usuarios-field input,
+.usuarios-field select {
+  width: 100%;
+  height: 38px;
+
+  padding:
+    0
+    11px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    #3f7c4b97;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #353b47;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  outline: none;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.usuarios-field input:focus,
+.usuarios-field select:focus {
+  border-color: #20afb2;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(32, 175, 178, 0.10);
+}
+
+
+.usuarios-field input::placeholder {
+  color: #98a2b3;
+
+  font-weight: 500;
+}
+
+
+.usuarios-field input[readonly] {
+  background: #f5f7fa;
+
+  color: #087443;
+
+  font-weight: 900;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   CÓDIGO
+========================================================= */
+
+.usuarios-field-codigo {
+  max-width: 170px;
+}
+
+
+.usuarios-field-codigo input {
+  background: #eef5f2;
+
+  color: #087443;
+
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   CAMPOS COMPACTOS
+========================================================= */
+
+/* DOCUMENTO */
+.usuarios-field-documento {
+  width: 120px;
+  max-width: 120px;
+}
+
+/* ROL */
+.usuarios-field-rol {
+  width: 140px;
+  max-width: 140px;
+}
+
+/* CONTRASEÑA */
+.usuarios-field-password {
+  width: 140px;
+  max-width: 140px;
+}
+
+/* NOMBRES Y APELLIDOS */
+.usuarios-field-nombres,
+.usuarios-field-apellidos {
+  max-width: 460px;
+}
+
+/* USUARIO */
+.usuarios-field-usuario {
+  max-width: 130px;
+}
+
+
+/* =========================================================
+   ASEGURAR QUE INPUTS Y SELECTS RESPETEN EL TAMAÑO
+========================================================= */
+
+.usuarios-field-documento input,
+.usuarios-field-rol select,
+.usuarios-field-password input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DE ÚLTIMO ACCESO
+========================================================= */
+
+.usuarios-access-info {
+  width: 100%;
+  max-width: 480px;
+
+  margin: 18px auto 0;
+
+  overflow: hidden;
+
+  border: 1px solid #131313;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.usuarios-access-header {
+  padding: 8px 12px;
+
+  background: #ffffff;
+
+  color: #087443;
+
+  border-bottom: 1px solid #d8e0dc;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  text-align: center;
+}
+
+
+.usuarios-access-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  background: #090909;
+}
+
+
+.usuarios-access-field {
+  min-height: 58px;
+
+  padding: 10px 13px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  background: #ffffff;
+
+  text-align: center;
+}
+
+
+.usuarios-access-field:first-child {
+  border-right: 1px solid #0e0e0e;
+}
+
+
+.usuarios-access-field span {
+  color: #087443;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+
+.usuarios-access-field strong {
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MODAL BUSCAR USUARIOS - MOVIBLE
+========================================================= */
+
+.usuarios-search-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+
+  background: rgba(15, 23, 42, 0.18);
+
+  pointer-events: none;
+}
+
+
+.usuarios-search-modal {
+  position: fixed;
+
+  width: min(900px, 94vw);
+  max-height: 78vh;
+
+  overflow: hidden;
+
+  border: 1px solid #d8e5df;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 24px 65px
+    rgba(15, 23, 42, 0.28);
+
+  pointer-events: auto;
+}
+
+
+.usuarios-search-modal-header {
+  min-height: 52px;
+
+  padding: 9px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087f69,
+      #20afb2
+    );
+
+  color: #ffffff;
+
+  cursor: move;
+  user-select: none;
+}
+
+
+.usuarios-search-modal-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+.usuarios-search-modal-close {
+  width: 36px;
+  height: 34px;
+
+  padding: 5px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+
+.usuarios-search-modal-close img {
+  width: 23px;
+  height: 23px;
+
+  object-fit: contain;
+}
+
+
+/* FILTROS */
+
+.usuarios-search-modal-filters {
+  padding: 13px 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    150px 1fr;
+
+  gap: 10px;
+
+  border-bottom:
+    1px solid #e4ebe8;
+
+  background: #f8fbfa;
+}
+
+
+.usuarios-search-modal-filters select {
+  height: 40px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid #d0d9d5;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.usuarios-search-modal-input {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  border:
+    1px solid #d0d9d5;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+
+.usuarios-search-modal-input:focus-within {
+  border-color: #20afb2;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(32, 175, 178, 0.12);
+}
+
+
+.usuarios-search-modal-input img {
+  width: 22px;
+  height: 22px;
+
+  margin-left: 10px;
+
+  object-fit: contain;
+}
+
+
+.usuarios-search-modal-input input {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 40px 0 9px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 13px;
+}
+
+
+.usuarios-search-modal-input button {
+  position: absolute;
+  right: 6px;
+
+  width: 28px;
+  height: 28px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #f2f4f7;
+
+  cursor: pointer;
+}
+
+
+/* TABLA EMERGENTE */
+
+.usuarios-search-modal-table-wrap {
+  max-height: 390px;
+  overflow: auto;
+
+  background: #ffffff;
+}
+
+
+.usuarios-search-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.usuarios-search-modal-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+
+.usuarios-search-modal-table th {
+  padding: 10px 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #218476,
+      #218476
+    );
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+
+  vertical-align: middle;
+}
+
+
+.usuarios-search-modal-table td {
+  padding: 10px 12px;
+
+  border-bottom: 1px solid #e7eeea;
+
+  color: #25333d;
+
+  font-size: 12px;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.usuarios-search-modal-table tbody tr:nth-child(even) {
+  background: #f5faf8;
+}
+
+
+.usuarios-search-modal-table tbody tr {
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.usuarios-search-modal-table tbody tr:hover {
+  background: #ddf5ea;
+
+  box-shadow:
+    inset 4px 0 0 #12b76a;
+}
+
+
+.usuarios-search-empty {
+  padding: 30px !important;
+
+  text-align: center;
+
+  color: #98a2b3 !important;
+}
+
+
+/* ESTILOS DE CELDAS - MODAL */
+
+.usuarios-modal-codigo {
+  color: #087443;
+
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+.usuarios-modal-documento {
+  color: #087443;
+  font-weight: 800;
+}
+
+
+.usuarios-modal-username {
+  color: #172033;
+  font-weight: 900;
+}
+
+
+.usuarios-modal-nombre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  text-align: center;
+}
+
+
+.usuarios-modal-nombre strong {
+  color: #172033;
+}
+
+
+.usuarios-modal-nombre span {
+  color: #667085;
+  font-size: 11px;
+}
+
+
+.usuarios-modal-rol {
+  display: inline-flex;
+
+  padding: 5px 8px;
+
+  border-radius: 7px;
+
+  background: #eefbf6;
+  color: #087443;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.usuarios-modal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.usuarios-modal-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+
+.usuarios-modal-status.active {
+  background: #ecfdf3;
+  color: #067647;
+}
+
+
+.usuarios-modal-status.active i {
+  background: #12b76a;
+}
+
+
+.usuarios-modal-status.blocked {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+
+.usuarios-modal-status.blocked i {
+  background: #f04438;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .usuarios-work-panel {
+    width:
+      calc(100% - 20px);
+
+    margin:
+      18px
+      auto
+      60px;
+
+    padding: 14px;
+  }
+
+
+  .usuarios-form-grid {
+    max-width: 100%;
+  }
+
+
+  .usuarios-field-codigo,
+  .usuarios-field-documento,
+  .usuarios-field-usuario,
+  .usuarios-field-rol,
+  .usuarios-field-password,
+  .usuarios-field-nombres,
+  .usuarios-field-apellidos {
+    max-width: 100%;
+    width: 100%;
+  }
+
+
+  .usuarios-actions-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    min-height: auto;
+  }
+
+
+  .usuarios-actions-title {
+    text-align: center;
+  }
+
+
+  .usuarios-work-actions {
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+  }
+
+
+  .usuarios-work-btn {
+    flex:
+      0
+      0
+      36px;
+
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+
+  .usuarios-work-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+
+  .usuarios-title-bar {
+    padding: 10px 14px;
+
+    min-height: 60px;
+  }
+
+
+  .usuarios-title-info h2 {
+    font-size: 20px;
+  }
+
+
+  .usuarios-search-modal {
+    width: 96vw;
+    max-height: 85vh;
+  }
+
+
+  .usuarios-search-modal-table-wrap {
+    max-height: 280px;
+  }
+
+
+  .usuarios-search-modal-filters {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   PERFILES Y PERMISOS DEL USUARIO
+   Ajustado al diseño actual de Usuarios - WebBuys
+========================================================= */
+
+/* =========================================================
+   BLOQUE DE PERFILES DEL EMPLEADO
+========================================================= */
+
+.usuarios-field-perfil {
+  width: 100%;
+  max-width: 100%;
+
+  margin-top: 4px;
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cfe0d8;
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fbfefc 0%,
+      #f5faf7 100%
+    );
+
+  box-shadow:
+    0 4px 12px
+    rgba(15, 23, 42, 0.04);
+}
+
+.usuarios-perfiles-heading {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.usuarios-perfiles-heading > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.usuarios-perfiles-heading label {
+  margin: 0;
+
+  color: #173f2e;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.usuarios-perfiles-heading small {
+  color: #667085;
+
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.usuarios-perfiles-contador {
+  flex: 0 0 auto;
+
+  padding: 5px 10px;
+
+  border: 1px solid #a8d7c3;
+  border-radius: 999px;
+
+  background: #eef9f4;
+  color: #087443;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TARJETAS DE PERFILES
+========================================================= */
+
+.usuarios-perfiles-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+.usuarios-perfil-card {
+  position: relative;
+
+  width: 100%;
+  min-height: 70px;
+
+  padding:
+    11px
+    39px
+    11px
+    12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cadad2;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px
+    rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.usuarios-perfil-card:hover {
+  transform: translateY(-1px);
+
+  border-color: #57aa85;
+
+  box-shadow:
+    0 7px 15px
+    rgba(36, 126, 72, 0.12);
+}
+
+.usuarios-perfil-card.seleccionado {
+  border-color: #0f8a66;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0fcf6 0%,
+      #e5f8ef 100%
+    );
+
+  box-shadow:
+    0 0 0 2px
+    rgba(15, 138, 102, 0.10),
+    0 6px 15px
+    rgba(36, 126, 72, 0.10);
+}
+
+.usuarios-perfil-card-check {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  width: 22px;
+  height: 22px;
+
+  border: 1px solid #b7cbc1;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.usuarios-perfil-card.seleccionado
+.usuarios-perfil-card-check {
+  border-color: #087443;
+  background: #087443;
+}
+
+.usuarios-perfil-card-contenido {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.usuarios-perfil-card-contenido strong {
+  color: #172033;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.usuarios-perfil-card.seleccionado
+.usuarios-perfil-card-contenido strong {
+  color: #087443;
+}
+
+.usuarios-perfil-card-contenido small {
+  color: #667085;
+
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.usuarios-perfiles-vacio {
+  width: 100%;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  border: 1px dashed #c5d3cc;
+  border-radius: 9px;
+
+  background: #fafcfb;
+  color: #667085;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* =========================================================
+   ADMINISTRADOR - ACCESO TOTAL
+========================================================= */
+
+.usuarios-admin-access-note {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #b9ddcd;
+  border-radius: 10px;
+
+  background: #eef9f4;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.usuarios-admin-access-note strong {
+  color: #087443;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.usuarios-admin-access-note span {
+  color: #52615a;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   PANEL DE PERMISOS DEL USUARIO
+========================================================= */
+
+.usuarios-perfil-permisos {
+  width: min(
+    700px,
+    calc(100vw - 70px)
+  );
+
+  align-self: center;
+
+  margin-top: 5px;
+
+  overflow: hidden;
+
+  border: 1px solid #b9cec4;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 16px
+    rgba(15, 23, 42, 0.06);
+}
+
+.usuarios-perfil-permisos summary {
+  min-height: 42px;
+
+  padding: 10px 13px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f5fbf8 0%,
+      #edf7f2 100%
+    );
+
+  color: #174b36;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.usuarios-perfil-permisos summary::-webkit-details-marker {
+  display: none;
+}
+
+.usuarios-perfil-permisos summary::before {
+  content: "▸";
+
+  margin-right: 7px;
+
+  color: #087443;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.usuarios-perfil-permisos[open] summary::before {
+  content: "▾";
+}
+
+.usuarios-perfil-permisos[open] summary {
+  border-bottom: 1px solid #dce8e2;
+}
+
+/* =========================================================
+   PESTAÑAS - COMBINADOS / BODEGA / CAJA / ETC.
+========================================================= */
+
+.usuarios-permisos-tabs {
+  width: 100%;
+
+  padding: 10px 12px 8px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  background: #ffffff;
+}
+
+.usuarios-permisos-tab {
+  min-height: 31px;
+
+  padding: 5px 13px;
+
+  border: 1px solid #bcd9cc;
+  border-radius: 999px;
+
+  background: #f2faf6;
+  color: #176344;
+
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease,
+    color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.usuarios-permisos-tab:hover {
+  transform: translateY(-1px);
+
+  border-color: #57aa85;
+  background: #e8f7ef;
+}
+
+.usuarios-permisos-tab.activo {
+  border-color: #087443;
+
+  background: #087443;
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 10px
+    rgba(8, 116, 67, 0.18);
+}
+
+/* =========================================================
+   CABECERA DEL EDITOR
+========================================================= */
+
+.usuarios-permisos-editor-cabecera {
+  padding: 9px 12px 10px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  border-top: 1px solid #edf2ef;
+
+  background: #ffffff;
+}
+
+.usuarios-permisos-editor-cabecera > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.usuarios-permisos-editor-cabecera strong {
+  color: #173f2e;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.usuarios-permisos-editor-cabecera span {
+  color: #667085;
+
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.usuarios-permisos-cargando {
+  flex: 0 0 auto;
+
+  padding: 4px 8px;
+
+  border-radius: 999px;
+
+  background: #fff8e8;
+  color: #8a6100 !important;
+
+  font-size: 9px !important;
+  font-weight: 800 !important;
+}
+
+/* =========================================================
+   LEYENDA DE CHECKS
+========================================================= */
+
+.usuarios-permisos-leyenda {
+  padding: 8px 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 11px;
+
+  border-top: 1px solid #edf2ef;
+  border-bottom: 1px solid #edf2ef;
+
+  background: #fbfdfc;
+}
+
+.usuarios-permisos-leyenda > span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #52615a;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.usuarios-leyenda-check {
+  width: 17px;
+  height: 17px;
+
+  box-sizing: border-box;
+
+  border-radius: 4px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.usuarios-leyenda-check.heredado {
+  border: 1px solid #087443;
+
+  background: #087443;
+  color: #ffffff;
+}
+
+.usuarios-leyenda-check.extra {
+  border: 1px solid #286f9b;
+
+  background: #286f9b;
+  color: #ffffff;
+}
+
+.usuarios-leyenda-check.retirado {
+  border: 1px solid #d92d20;
+
+  background: #ffffff;
+}
+
+.usuarios-leyenda-check.disponible {
+  border: 1px solid #9eafa7;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   TABLA DE PERMISOS
+========================================================= */
+
+.usuarios-perfil-permisos-table-wrap {
+  width: 100%;
+  max-height: 360px;
+
+  overflow: auto;
+
+  background: #ffffff;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    #8ca69a
+    #edf3f0;
+}
+
+.usuarios-perfil-permisos-table-wrap::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.usuarios-perfil-permisos-table-wrap::-webkit-scrollbar-track {
+  background: #edf3f0;
+}
+
+.usuarios-perfil-permisos-table-wrap::-webkit-scrollbar-thumb {
+  border: 2px solid #edf3f0;
+  border-radius: 999px;
+
+  background: #8ca69a;
+}
+
+.usuarios-perfil-permisos-table {
+  width: 100%;
+  min-width: 760px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  table-layout: auto;
+}
+
+.usuarios-perfil-permisos-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.usuarios-perfil-permisos-table th {
+  min-width: 76px;
+
+  padding: 9px 8px;
+
+  border-right: 1px solid #dfe9e4;
+  border-bottom: 1px solid #d5e4dd;
+
+  background: #eaf7f1;
+  color: #173f2e;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+.usuarios-perfil-permisos-table td {
+  height: 42px;
+
+  padding: 7px 8px;
+
+  border-right: 1px solid #e5ece8;
+  border-bottom: 1px solid #e5ece8;
+
+  background: #ffffff;
+  color: #344054;
+
+  text-align: center;
+  vertical-align: middle;
+
+  font-size: 10px;
+}
+
+.usuarios-perfil-permisos-table tbody tr:nth-child(even) td {
+  background: #fbfdfc;
+}
+
+.usuarios-perfil-permisos-table tbody tr:hover td {
+  background: #f2faf6;
+}
+
+.usuarios-perfil-permisos-table th:first-child,
+.usuarios-perfil-permisos-table td:first-child {
+  position: sticky;
+  left: 0;
+
+  z-index: 2;
+
+  min-width: 170px;
+  width: 170px;
+
+  text-align: left;
+
+  box-shadow:
+    2px 0 0
+    rgba(223, 233, 228, 0.92);
+}
+
+.usuarios-perfil-permisos-table th:first-child {
+  z-index: 6;
+
+  background: #eaf7f1;
+}
+
+.usuarios-perfil-permisos-table tbody tr:nth-child(even)
+.usuarios-perfil-permisos-table td:first-child {
+  background: #fbfdfc;
+}
+
+.usuarios-perfil-permisos-table tbody tr:hover
+.usuarios-perfil-permisos-table td:first-child {
+  background: #f2faf6;
+}
+
+.usuarios-perfil-permisos-table td:first-child strong,
+.usuarios-perfil-permisos-table td:first-child small {
+  display: block;
+}
+
+.usuarios-perfil-permisos-table td:first-child strong {
+  color: #172033;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.usuarios-perfil-permisos-table td:first-child small {
+  margin-top: 2px;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   CHECKS INTERACTIVOS
+========================================================= */
+
+.usuarios-permisos-editable
+ td.usuarios-permiso-celda {
+  padding: 5px 7px;
+}
+
+.usuarios-permiso-check {
+  width: 100%;
+  min-height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.usuarios-permiso-check input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.usuarios-permiso-check span {
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+
+  box-sizing: border-box;
+
+  border: 1.5px solid #9eafa7;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.usuarios-permiso-check:hover span {
+  transform: translateY(-1px);
+
+  border-color: #087443;
+
+  box-shadow:
+    0 3px 8px
+    rgba(8, 116, 67, 0.15);
+}
+
+.usuarios-permiso-check input:checked + span::after {
+  content: "✓";
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Heredado de uno de los perfiles */
+.usuarios-permiso-celda.heredado
+.usuarios-permiso-check span {
+  border-color: #087443;
+  background: #087443;
+}
+
+/* Permiso adicional únicamente de este usuario */
+.usuarios-permiso-celda.extra
+.usuarios-permiso-check span {
+  border-color: #286f9b;
+  background: #286f9b;
+}
+
+/* Si viene de otro perfil asignado se ve más suave */
+.usuarios-permiso-celda.heredado:not(.heredado-vista)
+.usuarios-permiso-check span {
+  border-color: #65ab8e;
+  background: #65ab8e;
+}
+
+/* Permiso que venía del perfil pero fue retirado solo para este usuario */
+.usuarios-permiso-celda.retirado
+.usuarios-permiso-check span {
+  border-color: #d92d20;
+  background: #ffffff;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(217, 45, 32, 0.08);
+}
+
+.usuarios-permiso-celda.retirado
+.usuarios-permiso-check:hover span {
+  border-color: #b42318;
+
+  box-shadow:
+    0 3px 8px
+    rgba(180, 35, 24, 0.14);
+}
+
+.usuarios-permiso-celda.heredado
+.usuarios-permiso-check {
+  cursor: pointer;
+}
+
+.usuarios-permiso-check input:focus-visible + span {
+  outline:
+    3px solid
+    rgba(8, 116, 67, 0.18);
+
+  outline-offset: 2px;
+}
+
+.usuarios-permiso-check input:disabled + span {
+  opacity: 0.9;
+}
+
+/* =========================================================
+   TEXTO INFERIOR DEL PANEL DE PERMISOS
+========================================================= */
+
+.usuarios-perfil-permisos-info {
+  margin: 0;
+
+  padding: 10px 12px 11px;
+
+  border-top: 1px solid #e5ece8;
+
+  background: #fbfdfc;
+  color: #667085;
+
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   PERFILES EN MODAL DE BÚSQUEDA
+========================================================= */
+
+.usuarios-modal-perfiles {
+  max-width: 230px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 4px;
+}
+
+.usuarios-modal-perfil {
+  min-height: 23px;
+
+  padding: 3px 8px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #c8ddd3;
+  border-radius: 999px;
+
+  background: #eef8f3;
+  color: #176344;
+
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESPONSIVE - PERFILES Y PERMISOS
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .usuarios-field-perfil {
+    padding: 11px;
+  }
+
+  .usuarios-perfiles-heading {
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .usuarios-perfiles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .usuarios-perfil-card {
+    min-height: 64px;
+  }
+
+  .usuarios-perfil-permisos {
+    width: 100%;
+  }
+
+  .usuarios-permisos-tabs {
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 9px;
+  }
+
+  .usuarios-permisos-tab {
+    flex: 0 0 auto;
+  }
+
+  .usuarios-permisos-editor-cabecera {
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .usuarios-perfil-permisos-table-wrap {
+    max-height: 290px;
+  }
+
+  .usuarios-perfil-permisos-table {
+    min-width: 710px;
+  }
+
+  .usuarios-perfil-permisos-table th:first-child,
+  .usuarios-perfil-permisos-table td:first-child {
+    min-width: 145px;
+    width: 145px;
+  }
+
+  .usuarios-admin-access-note {
+    padding: 10px 11px;
+  }
+}
+
+/* V13: acceso al reporte de usuarios, perfiles y permisos */
+.usuarios-reporte-btn {
+  min-height: 38px; padding: 7px 15px; border: 1px solid #0c756a;
+  border-radius: 8px; background: #0f766e; color: #fff;
+  font: inherit; font-size: 13px; font-weight: 800; cursor: pointer;
+  white-space: nowrap;
+}
+.usuarios-reporte-btn:hover { background: #07564f; }

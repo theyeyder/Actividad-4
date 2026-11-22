@@ -1,0 +1,594 @@
+.empresa-module {
+  width: 100%;
+  padding: 28px;
+}
+
+.empresa-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.empresa-header h2 {
+  margin: 6px 0 8px;
+  color: #172033;
+}
+
+.empresa-header p {
+  margin: 0;
+  max-width: 720px;
+  color: #667085;
+  line-height: 1.5;
+}
+
+.empresa-logo-preview {
+  flex: 0 0 110px;
+  width: 110px;
+  height: 110px;
+  padding: 10px;
+  border: 1px solid #d8e0ec;
+  border-radius: 20px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+}
+
+.empresa-logo-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================
+   PESTAÑAS
+========================== */
+
+.empresa-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding: 6px;
+  border: 1px solid #dfe6ee;
+  border-radius: 16px;
+  background: #f7f9fb;
+}
+
+.empresa-tab {
+  min-height: 42px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #667085;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.empresa-tab:hover {
+  color: #067647;
+  background: #ffffff;
+}
+
+.empresa-tab.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #177524, #5fe0cc);
+  box-shadow: 0 8px 18px rgba(23, 117, 36, 0.2);
+}
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+.empresa-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.empresa-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.empresa-field-full {
+  grid-column: 1 / -1;
+}
+
+.empresa-form-grid input,
+.empresa-form-grid select,
+.empresa-form-grid textarea {
+  width: 100%;
+  border: 1px solid #d8e0ec;
+  border-radius: 13px;
+  outline: none;
+  background: #f8fafc;
+  color: #172033;
+  font: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.empresa-form-grid input,
+.empresa-form-grid select {
+  min-height: 48px;
+  padding: 12px 14px;
+}
+
+.empresa-form-grid textarea {
+  min-height: 120px;
+  padding: 14px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.empresa-form-grid input::placeholder,
+.empresa-form-grid textarea::placeholder {
+  color: #98a2b3;
+}
+
+.empresa-form-grid input:focus,
+.empresa-form-grid select:focus,
+.empresa-form-grid textarea:focus {
+  border-color: #20afb2;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(32, 175, 178, 0.14);
+}
+
+/* ==========================
+   PIE Y ESTADO
+========================== */
+
+.empresa-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #e7edf5;
+}
+
+.empresa-footer .primary-btn {
+  min-width: 210px;
+}
+
+.empresa-footer .primary-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+.empresa-loading {
+  padding: 28px;
+  border: 1px dashed #cfd8e3;
+  border-radius: 16px;
+  background: #f8fafc;
+  color: #667085;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+  .empresa-module {
+    padding: 22px;
+  }
+
+  .empresa-header {
+    flex-direction: column;
+  }
+
+  .empresa-logo-preview {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+
+@media (max-width: 680px) {
+  .empresa-module {
+    padding: 18px;
+  }
+
+  .empresa-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .empresa-field-full {
+    grid-column: auto;
+  }
+
+  .empresa-tabs {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .empresa-tab {
+    width: 100%;
+  }
+
+  .empresa-footer {
+    justify-content: stretch;
+  }
+
+  .empresa-footer .primary-btn {
+    width: 100%;
+  }
+}
+.empresa-logo-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+.empresa-logo-buttons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.empresa-logo-note {
+  flex-basis: 100%;
+  margin-top: 10px;
+  color: #667085;
+  font-size: 14px;
+}
+
+
+/* ==========================
+   CARGA Y ACCIONES DEL LOGO
+========================== */
+
+.empresa-logo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empresa-logo-label {
+  color: #172033;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.empresa-logo-uploader {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  padding: 24px;
+  border: 2px dashed #d8e0ec;
+  border-radius: 20px;
+  background: #fafcff;
+}
+
+.empresa-logo-image {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  border: 1px solid #d8e0ec;
+  border-radius: 18px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.empresa-logo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.empresa-logo-image span {
+  color: #98a2b3;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.empresa-logo-actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.empresa-logo-buttons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo-upload-btn,
+.empresa-action-icon {
+  position: relative;
+  flex: 0 0 70px;
+  width: 70px;
+  height: 70px;
+  padding: 8px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: visible;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.logo-upload-btn:hover,
+.empresa-action-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 26px rgba(15, 23, 42, 0.16);
+}
+
+.logo-upload-btn:disabled,
+.empresa-action-icon:disabled {
+  opacity: 0.55;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+.logo-upload-icon,
+.empresa-action-image {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.logo-upload-btn span {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #177524;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.empresa-logo-note {
+  flex-basis: 100%;
+  margin-top: 20px;
+  color: #667085;
+  font-size: 14px;
+}
+
+/* Tooltip para Quitar logo y Guardar */
+
+.empresa-action-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(7px);
+  padding: 7px 12px;
+  border-radius: 9px;
+  background: #20afb2;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 9999;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.empresa-action-icon:hover::after,
+.empresa-action-icon:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* ==========================
+   NOTIFICACIONES
+========================== */
+
+.empresa-toast {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 99999;
+
+  min-width: 280px;
+  max-width: 420px;
+
+  padding: 15px 20px;
+  border-radius: 14px;
+
+  color: #f7f7f7;
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.2);
+
+  animation: empresaToastEntrada 0.3s ease;
+}
+
+.empresa-toast-success {
+  background: linear-gradient(
+    135deg,
+    #116015,
+    #136531
+  );
+}
+
+.empresa-toast-error {
+  background: linear-gradient(
+    135deg,
+    #b42318,
+    #f04438
+  );
+}
+
+@keyframes empresaToastEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .empresa-toast {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    min-width: 0;
+    max-width: none;
+  }
+}
+/* =========================================================
+   CABECERA PRINCIPAL DEL MÓDULO EMPRESA
+========================================================= */
+
+.empresa-page {
+  width: 100%;
+  min-height: 100%;
+}
+
+.empresa-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 8000;
+
+  width: auto;
+  height: 72px;
+  padding: 8px 24px 8px 70px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e 0%,
+      #159a75 52%,
+      #20afb2 100%
+    );
+
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.12);
+}
+
+.empresa-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.empresa-topbar-copy {
+  min-width: 0;
+}
+
+.empresa-topbar-copy h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.empresa-topbar-copy p {
+  margin: 2px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.empresa-content {
+  width: 100%;
+  padding: 96px 24px 24px;
+  box-sizing: border-box;
+}
+
+.empresa-content .empresa-module {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.empresa-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e7eeea;
+}
+
+.empresa-header-copy {
+  min-width: 0;
+}
+
+.empresa-header-copy h2 {
+  margin: 6px 0 8px;
+  color: #173c31;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.empresa-header-copy p {
+  margin: 0;
+  max-width: 720px;
+  color: #667085;
+  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+@media (max-width: 768px) {
+  .empresa-topbar {
+    height: 64px;
+    padding: 9px 12px 9px 60px;
+  }
+
+  .empresa-topbar-copy p {
+    display: none;
+  }
+
+  .empresa-content {
+    padding: 78px 14px 14px;
+  }
+}

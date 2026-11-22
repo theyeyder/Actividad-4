@@ -1,0 +1,695 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #263b33;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+body {
+  padding: 18px;
+}
+
+.documento-header,
+.listado-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0f766e, #159a75 55%, #20afb2);
+  color: #ffffff;
+}
+
+.documento-label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.documento-header h1,
+.listado-header h1 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.15;
+}
+
+.listado-header p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  opacity: 0.82;
+}
+
+.estado {
+  padding: 7px 11px;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.info-box {
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid #dce8e3;
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.info-box-wide {
+  grid-column: span 2;
+}
+
+.info-box span,
+.nota span {
+  display: block;
+  margin-bottom: 4px;
+  color: #70847c;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.info-box strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+}
+
+.info-entrega-section {
+  margin-bottom: 14px;
+  padding: 11px 12px 12px;
+  border: 1px solid #d8e7e1;
+  border-radius: 11px;
+  background: #f7fbf9;
+}
+
+.info-entrega-title {
+  margin-bottom: 9px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #dce9e4;
+  color: #087858;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.info-entrega-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.info-entrega-item {
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid #dce8e3;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.info-entrega-full {
+  grid-column: 1 / -1;
+}
+
+.info-entrega-item span {
+  display: block;
+  margin-bottom: 4px;
+  color: #70847c;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.info-entrega-item strong {
+  display: block;
+  color: #263b33;
+  font-size: 10px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.productos-section {
+  margin-bottom: 14px;
+  border: 1px solid #dce8e3;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.section-title {
+  padding: 9px 11px;
+  border-bottom: 1px solid #dce8e3;
+  background: #f3f8f6;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productos-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.productos-table .col-codigo {
+  width: 16%;
+}
+
+.productos-table .col-producto {
+  width: 29%;
+}
+
+.productos-table .col-cantidad {
+  width: 9%;
+}
+
+.productos-table .col-peso {
+  width: 14%;
+}
+
+.productos-table .col-precio {
+  width: 15%;
+}
+
+.productos-table .col-subtotal {
+  width: 17%;
+}
+
+.productos-table th.col-texto {
+  text-align: left;
+}
+
+.productos-table th.col-numero,
+.productos-table td.numero {
+  text-align: right;
+}
+
+.productos-table th.col-peso-real,
+.productos-table td.peso-real {
+  text-align: center;
+}
+
+.productos-table th,
+.productos-table td {
+  box-sizing: border-box;
+}
+
+.productos-table td {
+  vertical-align: middle;
+}
+
+.productos-table td:nth-child(1),
+.productos-table td:nth-child(3),
+.productos-table td:nth-child(4),
+.productos-table td:nth-child(5),
+.productos-table td:nth-child(6) {
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 8px 9px;
+  border-bottom: 1px solid #e8efec;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #eef6f3;
+  color: #526b61;
+  font-size: 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 9px;
+}
+
+td small {
+  display: block;
+  margin-top: 2px;
+  color: #7d8e87;
+  font-size: 8px;
+}
+
+.numero {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pendiente {
+  color: #8b6a05;
+  font-weight: 800;
+}
+
+.sin-datos {
+  padding: 18px;
+  color: #71847c;
+  text-align: center;
+}
+
+.totales {
+  width: min(360px, 100%);
+  margin: 0 0 14px auto;
+  padding: 10px 12px;
+  border: 1px solid #d7e4df;
+  border-radius: 9px;
+}
+
+.totales > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 4px 0;
+}
+
+.total-final {
+  margin-top: 4px;
+  padding-top: 8px !important;
+  border-top: 2px solid #159a75;
+}
+
+.total-final strong {
+  color: #087858;
+  font-size: 15px;
+}
+
+.nota {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border: 1px solid #dce8e3;
+  border-radius: 8px;
+  background: #f8fbfa;
+}
+
+.nota-cancelada {
+  border-color: #efc6c1;
+  background: #fff1ef;
+}
+
+.nota-cancelada strong {
+  color: #a9342d;
+}
+
+.documento-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #dce8e3;
+  color: #758981;
+  font-size: 8px;
+}
+
+.listado-resumen {
+  min-width: 90px;
+  text-align: center;
+}
+
+.listado-resumen strong {
+  display: block;
+  font-size: 22px;
+}
+
+.listado-resumen span {
+  font-size: 9px;
+}
+
+.listado-filtros {
+  margin-bottom: 12px;
+  padding: 9px 11px;
+  border: 1px solid #dce8e3;
+  border-radius: 8px;
+  background: #f8fbfa;
+  font-size: 9px;
+}
+
+.listado-filtros strong {
+  margin-right: 6px;
+}
+
+.listado-table-wrap {
+  overflow: hidden;
+  border: 1px solid #dce8e3;
+  border-radius: 9px;
+}
+
+.listado-table th,
+.listado-table td {
+  padding: 7px 8px;
+  font-size: 8px;
+}
+
+.listado-total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-top: 2px solid #159a75;
+}
+
+.listado-total strong {
+  color: #087858;
+  font-size: 14px;
+}
+
+@media print {
+  body {
+    padding: 0;
+  }
+
+  .documento-header,
+  .listado-header,
+  th {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  tr,
+  .info-box,
+  .info-entrega-section,
+  .info-entrega-item,
+  .nota,
+  .totales {
+    break-inside: avoid;
+  }
+}
+
+
+/* WEBBUYS: impresión individual en Estamento / media carta horizontal.
+   Se aplica solo al comprobante individual, NO al listado de entregas. */
+@media print {
+  body.entrega-individual-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 9px;
+    line-height: 1.18;
+    overflow: visible !important;
+  }
+
+  .entrega-individual-body .documento-header {
+    padding: 7px 9px;
+    margin-bottom: 6px;
+    gap: 8px;
+    border-radius: 5px;
+    break-after: avoid;
+  }
+
+  .entrega-individual-body .documento-header h1 {
+    font-size: 15px;
+  }
+
+  .entrega-individual-body .documento-label {
+    font-size: 8px;
+    margin-bottom: 2px;
+  }
+
+  .entrega-individual-body .estado {
+    padding: 4px 7px;
+    font-size: 8px;
+  }
+
+  .entrega-individual-body .info-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .entrega-individual-body .info-box {
+    padding: 4px 6px;
+    border-radius: 4px;
+  }
+
+  .entrega-individual-body .info-box span,
+  .entrega-individual-body .info-entrega-item span,
+  .entrega-individual-body .nota span {
+    font-size: 7px;
+    margin-bottom: 2px;
+  }
+
+  .entrega-individual-body .info-box strong,
+  .entrega-individual-body .info-entrega-item strong {
+    font-size: 8.5px;
+    line-height: 1.2;
+  }
+
+  .entrega-individual-body .info-entrega-section {
+    padding: 5px 7px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .entrega-individual-body .info-entrega-title {
+    margin-bottom: 4px;
+    padding-bottom: 3px;
+    font-size: 8px;
+  }
+
+  .entrega-individual-body .info-entrega-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .entrega-individual-body .info-entrega-item {
+    padding: 4px 5px;
+    border-radius: 4px;
+    break-inside: avoid;
+  }
+
+  .entrega-individual-body .info-entrega-full {
+    grid-column: auto;
+  }
+
+  .entrega-individual-body .productos-section {
+    margin-bottom: 6px;
+    overflow: visible !important;
+    border-radius: 0;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .entrega-individual-body .section-title {
+    padding: 5px 7px;
+    font-size: 8px;
+    break-after: avoid;
+  }
+
+  .entrega-individual-body .productos-table {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .entrega-individual-body .productos-table thead {
+    display: table-header-group;
+  }
+
+  .entrega-individual-body .productos-table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .entrega-individual-body .productos-table th,
+  .entrega-individual-body .productos-table td {
+    padding: 3px 4px;
+    font-size: 8px;
+    line-height: 1.15;
+  }
+
+  .entrega-individual-body .productos-table td small {
+    margin-top: 1px;
+    font-size: 7px;
+  }
+
+  .entrega-individual-body .totales {
+    width: min(290px, 100%);
+    margin: 4px 0 6px auto;
+    padding: 5px 8px;
+    border-radius: 5px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .entrega-individual-body .totales > div {
+    gap: 8px;
+    padding: 2px 0;
+  }
+
+  .entrega-individual-body .total-final {
+    margin-top: 2px;
+    padding-top: 4px !important;
+  }
+
+  .entrega-individual-body .total-final strong {
+    font-size: 12px;
+  }
+
+  .entrega-individual-body .nota {
+    margin-bottom: 5px;
+    padding: 5px 7px;
+    break-inside: auto;
+  }
+
+  .entrega-individual-body .documento-footer {
+    margin-top: 5px;
+    padding-top: 4px;
+    gap: 8px;
+    font-size: 7.5px;
+    break-inside: avoid;
+  }
+}
+
+/* WEBBUYS: impresión individual de entrega sin importes; Caja conserva importes. */
+.entrega-sin-valores .productos-table .col-codigo { width: 18%; }
+.entrega-sin-valores .productos-table .col-producto { width: 48%; }
+.entrega-sin-valores .productos-table .col-cantidad { width: 14%; }
+.entrega-sin-valores .productos-table .col-peso { width: 20%; }
+
+/* =========================================
+   V5: MEDIA CARTA EN AMBAS ORIENTACIONES
+   El tamaño y la orientación los elige el usuario en la impresora.
+   Estas reglas solo afectan al comprobante INDIVIDUAL de entrega.
+========================================= */
+@media print {
+  .entrega-individual-body {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  .entrega-individual-body .documento-header,
+  .entrega-individual-body .info-box,
+  .entrega-individual-body .info-entrega-item,
+  .entrega-individual-body .totales,
+  .entrega-individual-body .documento-footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .entrega-individual-body .productos-section,
+  .entrega-individual-body .productos-table,
+  .entrega-individual-body .productos-table tbody {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .entrega-individual-body .productos-table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .entrega-individual-body .productos-table thead {
+    display: table-header-group;
+  }
+
+  .entrega-individual-body .productos-table tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .entrega-individual-body .productos-table th,
+  .entrega-individual-body .productos-table td {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  /* La presentación corta acompaña al nombre y evita una línea extra por producto. */
+  .entrega-individual-body .productos-table td small {
+    display: inline;
+    margin: 0 0 0 4px;
+    font-size: 7px;
+  }
+
+  .entrega-individual-body .productos-table td:first-child,
+  .entrega-individual-body .productos-table td:nth-child(5),
+  .entrega-individual-body .productos-table td:nth-child(6) {
+    white-space: normal;
+  }
+
+  .entrega-individual-body .info-grid,
+  .entrega-individual-body .info-entrega-grid {
+    min-width: 0;
+  }
+}
+
+/* Media carta vertical: menos columnas en los cuadros de datos. */
+@media print and (orientation: portrait) {
+  .entrega-individual-body .info-grid,
+  .entrega-individual-body .info-entrega-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .entrega-individual-body .info-box-wide {
+    grid-column: 1 / -1;
+  }
+
+  .entrega-individual-body .info-entrega-full {
+    grid-column: auto;
+  }
+
+  .entrega-individual-body .productos-table th,
+  .entrega-individual-body .productos-table td {
+    padding: 5px 3px;
+    font-size: 9px;
+  }
+
+  .entrega-individual-body .productos-table td small { font-size: 8px; }
+  .entrega-individual-body .info-box strong,
+  .entrega-individual-body .info-entrega-item strong { font-size: 9px; }
+
+  .entrega-individual-body .productos-table .col-codigo { width: 13%; }
+  .entrega-individual-body .productos-table .col-producto { width: 31%; }
+  .entrega-individual-body .productos-table .col-cantidad { width: 9%; }
+  .entrega-individual-body .productos-table .col-peso { width: 15%; }
+  .entrega-individual-body .productos-table .col-precio { width: 15%; }
+  .entrega-individual-body .productos-table .col-subtotal { width: 17%; }
+
+  .entrega-sin-valores .productos-table .col-codigo { width: 18%; }
+  .entrega-sin-valores .productos-table .col-producto { width: 48%; }
+  .entrega-sin-valores .productos-table .col-cantidad { width: 14%; }
+  .entrega-sin-valores .productos-table .col-peso { width: 20%; }
+}
+
+/* Media carta horizontal: cuadros de datos más anchos y compactos. */
+@media print and (orientation: landscape) {
+  .entrega-individual-body .info-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .entrega-individual-body .info-entrega-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
